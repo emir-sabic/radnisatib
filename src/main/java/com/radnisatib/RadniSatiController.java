@@ -14,8 +14,10 @@ public class RadniSatiController {
     @Autowired
     private RadniSatiService radniSatiService;
 
-    @PostMapping("/new")
+    @PostMapping
     public ResponseEntity<String> dodajDolazak (@RequestBody String barcode){
+        System.out.println("okk");
         return ResponseEntity.ok("Attendance recorded successfully.");
+
     }
 }
