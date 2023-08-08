@@ -1,0 +1,28 @@
+server:
+  port: ${APPLICATION_PORT:8080}
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${APP_DB_URL:localhost}:${APP_DB_PORT:5432}/${APP_DB_NAME:hairsalon_db}
+    username: ${APP_DB_USERNAME:postgres}
+    password: ${APP_DB_PASSWORD:admin}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    openInView: false
+    show_sql: true
+    generate-ddl: true
+  data:
+    jpa:
+      repositories.enabled: true
+
+frontend:
+  url: ${FRONTEND_API_URL:"http://localhost:4200"}
+
+  application:
+    security:
+      jwt:
+        secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+        expiration: 86400000 # a day
+        refresh-token:
+          expiration: 604800000 # 7 days
