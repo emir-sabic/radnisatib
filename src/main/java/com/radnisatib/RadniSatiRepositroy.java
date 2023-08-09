@@ -1,4 +1,7 @@
 package com.radnisatib;
 
-public interface RadniSatiRepositroy {
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface RadniSatiRepositroy{
 }
