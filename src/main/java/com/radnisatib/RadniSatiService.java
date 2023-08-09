@@ -2,6 +2,8 @@ package com.radnisatib;
 
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class RadniSatiService {
 
@@ -11,7 +13,10 @@ public class RadniSatiService {
         this.radniSatiRepositroy = radniSatiRepositroy;
     }
 
-    public String dodajDolazak(String barcode) {
+    public RadniSatiEntity createScan(RadniSatiEntity radniSatiEntity){
+        return this.radniSatiRepositroy.save(radniSatiEntity);
+    }
 
-    };
+    public Optional<RadniSatiEntity> findByBarcode(String bardcode){return this.radniSatiRepositroy.findyByBarcode(bardcode);}
+
 }
