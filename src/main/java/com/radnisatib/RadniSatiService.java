@@ -17,6 +17,6 @@ public class RadniSatiService {
         return this.radniSatiRepositroy.save(radniSatiEntity);
     }
 
-    public Optional<RadniSatiEntity> findByBarcode(String bardcode){return this.radniSatiRepositroy.findyByBarcode(bardcode);}
-
+    public RadniSatiEntity findBybarcode(String barcode){
+        return this.radniSatiRepositroy.findBybarcode(barcode);}
 }

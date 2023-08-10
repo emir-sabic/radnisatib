@@ -2,9 +2,6 @@ package com.radnisatib;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import com.radnisatib.RadniSatiEntity;
-import com.radnisatib.RadniSatiVM;
-
 
 
 @RequestMapping("/api/scanner")
@@ -20,12 +17,12 @@ public class RadniSatiController {
         return new RadniSatiVM(this.radniSatiService.createScan(new RadniSatiEntity(radniSati)));
     }
 
-
-    public String findByBarcode(String barcode){
-        String zadnji = String.valueOf(this.radniSatiService.findByBarcode((barcode)));
-        System.out.println(barcode);
-        return zadnji;
+    @GetMapping("/get")
+    public RadniSatiVM fetchScan (@PathVariable String scan){
+        System.out.println("mujo");
+        return new RadniSatiVM(this.radniSatiService.findBybarcode(scan));
     }
+
 
 
 
