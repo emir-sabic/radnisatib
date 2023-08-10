@@ -17,10 +17,10 @@ public class RadniSatiController {
         return new RadniSatiVM(this.radniSatiService.createScan(new RadniSatiEntity(radniSati)));
     }
 
-    @GetMapping("/get")
-    public RadniSatiVM fetchScan (@PathVariable String scan){
+    @GetMapping("/{barcode}")
+    public RadniSatiVM fetchScan (@PathVariable String barcode){
         System.out.println("mujo");
-        return new RadniSatiVM(this.radniSatiService.findBybarcode(scan));
+        return new RadniSatiVM(this.radniSatiService.findBybarcode(barcode));
     }
 
 
