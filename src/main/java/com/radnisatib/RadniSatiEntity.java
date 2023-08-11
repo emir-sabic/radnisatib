@@ -22,12 +22,16 @@ public class RadniSatiEntity {
     @Column(name = "scanDateTime")
     private String scanDateTime;
 
+    @Column(name = "currentstate")
+    private String currentstate;
+
 
 
     public RadniSatiEntity(RadniSatiVM radniSatiVM){
         this.barcode = radniSatiVM.getBarcode();
         this.attendancetype = radniSatiVM.getAttendancetype();
         this.scanDateTime = radniSatiVM.getScanDateTime();
+        this.currentstate = radniSatiVM.getCurrentstate();
     }
     public RadniSatiEntity(){}
 
@@ -37,6 +41,7 @@ public class RadniSatiEntity {
                 ", barcode" + barcode + '\'' +
                 ", attendancetype" + attendancetype + '\'' +
                 ", scanDateTime" + scanDateTime + '\'' +
+                ", currentstate" + currentstate + '\'' +
                 "}";
     }
 }

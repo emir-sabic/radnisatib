@@ -18,5 +18,5 @@ public class RadniSatiService {
     }
 
     public RadniSatiEntity findBybarcode(String barcode){
-        return this.radniSatiRepositroy.findBybarcode(barcode);}
+        return radniSatiRepositroy.findFirstByBarcodeOrderByScanDateTimeDesc(barcode);}
 }

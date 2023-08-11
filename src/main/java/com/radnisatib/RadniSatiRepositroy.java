@@ -8,6 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface RadniSatiRepositroy extends JpaRepository<RadniSatiEntity, Long> {
-
-    RadniSatiEntity findBybarcode(String barcode);
+    RadniSatiEntity findFirstByBarcodeOrderByScanDateTimeDesc(String barcode);
 }

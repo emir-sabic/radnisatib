@@ -14,12 +14,11 @@ public class RadniSatiController {
 
     @PostMapping("/new")
     public RadniSatiVM  createScan (@RequestBody RadniSatiVM radniSati){
-        return new RadniSatiVM(this.radniSatiService.createScan(new RadniSatiEntity(radniSati)));
+      return new RadniSatiVM(this.radniSatiService.createScan(new RadniSatiEntity(radniSati)));
     }
 
-    @GetMapping("/{barcode}")
-    public RadniSatiVM fetchScan (@PathVariable String barcode){
-        System.out.println("mujo");
+    @GetMapping("/search/{barcode}")
+    public RadniSatiVM searchByBarcode (@PathVariable String barcode){
         return new RadniSatiVM(this.radniSatiService.findBybarcode(barcode));
     }
 
