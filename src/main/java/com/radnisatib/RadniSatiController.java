@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/api/scanner")
 @RestController
-@CrossOrigin(origins = "http://localhost:4200/")
+@CrossOrigin(origins = "*")
 public class RadniSatiController {
 
     @Autowired
