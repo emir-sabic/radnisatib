@@ -2,6 +2,7 @@ package com.radnisatib;
 
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -18,5 +19,10 @@ public class RadniSatiService {
     }
 
     public RadniSatiEntity findBybarcode(String barcode){
-        return radniSatiRepositroy.findFirstByBarcodeOrderByScanDateTimeDesc(barcode);}
+        return radniSatiRepositroy.findFirstByBarcodeOrderByScanDateTimeDesc(barcode);
+    }
+
+    public List<RadniSatiEntity> findAllByOrderByScanDateTimeDesc(){return this.radniSatiRepositroy.findAllByOrderByScanDateTimeDesc();}
+
+
 }
